@@ -205,3 +205,24 @@ The current HKM website is designed for screens from compact 320px phones throug
 No build step or framework is needed. Changes were made in `assets/css/style.css` and `assets/js/app.js`; continue editing `assets/js/data.js` for your academic content.
 
 For device testing, open Developer Tools in Chrome/Edge/Firefox, turn on the device toolbar and test 320, 375, 390, 430, 600, 768, 820, 1024, 1440 and 1920 CSS pixels.
+
+
+## October 2026 typography and labeling update
+
+This package matches the **dark HKM design already deployed at hkabirmehedi.github.io**, not the alternative Nordic theme.
+
+- The header subtitle “RESEARCH PORTFOLIO” has been removed from every page.
+- The homepage role label reads “LEARNER · COMPUTER SCIENCE & ENGINEERING”.
+- “RESEARCH FOCUS” has no leading number; homepage later sections retain “02 / ACADEMIC APPOINTMENTS” and subsequent headings as requested.
+- Research and About page section headings have no numbers. Research quick links and research topic cards have no decorative numbering.
+- The latest complete publications, DOI/email updates, and removed preprints are retained in `assets/js/data.js`; the contact HTML fallback email has also been updated.
+
+**To update GitHub Pages:** Extract this archive and upload its contents to the root of your GitHub repository. Replace existing files and commit. In particular, replace all four HTML pages, `assets/js/app.js`, `assets/js/data.js`, and `assets/css/style.css`.
+
+
+## Latest website update (October 2026)
+
+- ScholarGPS profile added to the Research and Contact pages (ScholarGPS ID: 60176498191431).
+- Removed the circular “Research / In Progress” portrait/orbit graphic from the Home landing page.
+- The profile photograph remains available on the About page and the About-page owner photo editor.
+- No changes were made to publication records, education, teaching or other academic details.
