@@ -226,3 +226,7 @@ This package matches the **dark HKM design already deployed at hkabirmehedi.gith
 - Removed the circular “Research / In Progress” portrait/orbit graphic from the Home landing page.
 - The profile photograph remains available on the About page and the About-page owner photo editor.
 - No changes were made to publication records, education, teaching or other academic details.
+
+
+### Hero alignment update (October 2026)
+The homepage (`index.html`) hero headline is now structured as two clear headline lines with the name and supporting paragraph aligned beneath. Responsive layout rules are at the bottom of `assets/css/style.css`. Replace **both** files when updating an existing installation.
