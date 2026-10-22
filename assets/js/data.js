@@ -12,7 +12,7 @@ window.SITE_DATA = {
     "headline": "Lecturer · Research Assistant · AI Researcher · IEEE Member",
     "institution": "UCSI University Branch Campus Bangladesh · Uttara University · BRAC University",
     "location": "Dhaka, Bangladesh",
-    "email": "humaion.kabir.mehedi@g.bracu.ac.bd",
+    "email": "hkabirmehedi@gmail.com",
     "bio": "I explore practical, interpretable artificial intelligence across medical imaging, computer vision, and natural language processing. My research connects rigorous model development with meaningful applications in health, language, and the environment.",
     "shortBio": "Lecturer at UCSI University Branch Campus Bangladesh and Uttara University; Research Assistant at BRAC University since 14 April 2026; IEEE member. My research spans explainable medical imaging, efficient deep learning, and language technologies.",
     "scholar": "https://scholar.google.com/citations?user=BJPb5BcAAAAJ&hl=en",
@@ -77,22 +77,7 @@ window.SITE_DATA = {
       ]
     }
   ],
-  "researchHighlights": [
-    {
-      "label": "Public research preprint · 2025",
-      "title": "Interpretable Gallbladder Ultrasound Diagnosis",
-      "description": "A publicly posted preprint exploring a lightweight web-mobile software platform with real-time explainable AI for gallbladder ultrasound analysis.",
-      "url": "https://arxiv.org/abs/2512.23033",
-      "action": "View preprint"
-    },
-    {
-      "label": "Public research preprint · 2022",
-      "title": "Distributed Computing for Big Data Analytics: Challenges and Opportunities",
-      "description": "Preprint by Ehsanur Rahman Rhythm, Rajvir Ahmed Shuvo, H. K. Mehedi, S. Hossain and Annajiat Alim Rasel. Not counted among peer-reviewed journal or conference articles.",
-      "url": "https://www.researchgate.net/profile/Ehsanur-Rahman-Rhythm/publication/366466213_Distributed_Computing_for_Big_Data_Analytics_Challenges_and_Opportunities/links/64841f02d702370600e655f0/Distributed-Computing-for-Big-Data-Analytics-Challenges-and-Opportunities.pdf",
-      "action": "View preprint"
-    }
-  ],
+  "researchHighlights": [],
   "underReview": [
     {
       "title": "Explainable Deep Learning for Medical Image Classification — Sample Title",
@@ -145,10 +130,10 @@ window.SITE_DATA = {
       "date": "2026-10-07",
       "year": 2026,
       "topic": "Healthcare AI",
-      "url": "https://www.frontiersin.org/journals/computer-science/articles/10.3389/fcomp.2026.1901490/abstract",
+      "url": "https://doi.org/10.3389/fcomp.2026.1901490",
       "pages": "1901490",
       "publisher": "Frontiers Media SA",
-      "doi": "10.3389/fcomp.2026.1901490/abstract",
+      "doi": "10.3389/fcomp.2026.1901490",
       "volume": "8"
     },
     {
