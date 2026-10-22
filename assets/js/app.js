@@ -248,6 +248,7 @@
   if (socialRoot) {
     const profiles = [
       ['Google Scholar','Research publications','GS',data.profile.scholar],
+      ['ScholarGPS',`ScholarGPS® ID: ${data.profile.scholargpsId || '60176498191431'}`,'SG',data.profile.scholargps],
       ['ORCID','Researcher identifier','iD',data.profile.orcid],
       ['DBLP','Computer science bibliography','DB',data.profile.dblp],
       ['GitHub','Code & projects','GH',data.profile.github],

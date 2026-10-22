@@ -16,6 +16,8 @@ window.SITE_DATA = {
     "bio": "I explore practical, interpretable artificial intelligence across medical imaging, computer vision, and natural language processing. My research connects rigorous model development with meaningful applications in health, language, and the environment.",
     "shortBio": "Lecturer at UCSI University Branch Campus Bangladesh and Uttara University; Research Assistant at BRAC University since 14 April 2026; IEEE member. My research spans explainable medical imaging, efficient deep learning, and language technologies.",
     "scholar": "https://scholar.google.com/citations?user=BJPb5BcAAAAJ&hl=en",
+    "scholargps": "https://scholargps.com/scholars/60176498191431/md-humaion-kabir-mehedi",
+    "scholargpsId": "60176498191431",
     "orcid": "https://orcid.org/0000-0002-5759-022X",
     "dblp": "https://dblp.org/pid/333/4435.html",
     "github": "https://github.com/hkabirmehedi",
