@@ -304,3 +304,12 @@ img{height:auto}
   *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}
 }
 @media(max-width:600px){.publication-arrow{width:33px;height:33px;font-size:19px}}
+
+/* Editorial cleanup: unnumbered section labels and clean publication metadata. */
+.brand-text{justify-content:center}
+.research-index a{justify-content:center;min-height:82px;padding-right:40px}
+.research-index a b{top:50%;transform:translateY(-50%)}
+.focus-top{justify-content:flex-end}
+.publication-authors{font-size:12px;line-height:1.65;color:var(--sub);margin:1px 0 11px}
+.publication-citation{font-size:11px;line-height:1.65;color:var(--muted);margin-top:11px}
+@media(max-width:560px){.research-index a{min-height:68px}}

@@ -152,7 +152,7 @@
 
   // Shared research focus cards.
   function focusCard(track) {
-    return `<article class="focus-card"><div class="focus-top"><span>${html(track.number)}</span><span class="focus-icon" aria-hidden="true">${html(track.icon)}</span></div><h3>${html(track.title)}</h3><p>${html(track.description)}</p><div class="keyword-row">${track.keywords.map(t=>`<span>${html(t)}</span>`).join('')}</div></article>`;
+    return `<article class="focus-card"><div class="focus-top"><span class="focus-icon" aria-hidden="true">${html(track.icon)}</span></div><h3>${html(track.title)}</h3><p>${html(track.description)}</p><div class="keyword-row">${track.keywords.map(t=>`<span>${html(t)}</span>`).join('')}</div></article>`;
   }
   const homeFocus = $('#home-focus-grid');
   if (homeFocus) homeFocus.innerHTML = data.researchTracks.map(focusCard).join('');
@@ -210,14 +210,15 @@
     function render() {
       const q = String(search?.value||'').toLocaleLowerCase().trim();
       const year = select?.value || 'all';
-      const filtered = items.filter(p => (year==='all'||String(p.year)===year) && [p.title,p.venue,p.topic,p.year,p.doi||''].join(' ').toLocaleLowerCase().includes(q));
+      const filtered = items.filter(p => (year==='all'||String(p.year)===year) && [p.title,p.venue,p.topic,p.year,p.doi||'',p.publisher||'',p.publicationType||'',p.pages||'',...(Array.isArray(p.authors)?p.authors:[])].join(' ').toLocaleLowerCase().includes(q));
       if (total) total.textContent = `${filtered.length} ${kind === 'journal' ? 'journal article' : 'conference paper'}${filtered.length===1?'':'s'}`;
       list.innerHTML = filtered.length ? filtered.map(p=> {
-        const link = p.doi ? `https://doi.org/${encodeURIComponent(p.doi)}` : p.url || data.profile.dblp;
-        const linkLabel = p.doi ? 'DOI' : 'Paper';
+        const link = p.url || (p.doi ? `https://doi.org/${encodeURIComponent(p.doi)}` : data.profile.dblp);
+        const linkLabel = p.doi ? 'DOI / Paper' : 'Paper';
+        const dateDisplay = /^\d{4}-\d{2}-\d{2}$/.test(p.date||'') ? new Date(p.date+'T12:00:00Z').toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric',timeZone:'UTC'}) : /^\d{4}-\d{2}$/.test(p.date||'') ? new Date(p.date+'-01T12:00:00Z').toLocaleDateString('en-GB',{month:'short',year:'numeric',timeZone:'UTC'}) : (p.date || String(p.year));
         const exactDate = p.date && /^\d{4}-\d{2}-\d{2}$/.test(p.date) ? new Date(p.date+'T12:00:00') : null;
         const isNew = !!(exactDate && (Date.now()-exactDate.getTime())<1000*60*60*24*120 && (Date.now()-exactDate.getTime())>=0);
-        return `<article class="publication-row"><span class="publication-date">${html(p.year)}</span><div class="publication-main"><h3>${html(p.title)}</h3><div class="publication-meta"><span>${html(p.venue)}</span><span class="pub-tag">${html(p.topic || 'Research')}</span>${isNew?'<span class="new-chip">RECENT</span>':''}</div></div><div class="publication-actions"><a href="${safeHref(link)}" target="_blank" rel="noopener noreferrer" aria-label="Open ${html(p.title)}">${linkLabel} ↗</a></div></article>`;
+        return `<article class="publication-row"><span class="publication-date">${html(p.year)}</span><div class="publication-main"><h3>${html(p.title)}</h3>${Array.isArray(p.authors)&&p.authors.length?`<p class="publication-authors">${html(p.authors.join(', '))}</p>`:''}<div class="publication-meta"><span>${html(p.venue)}</span><span class="pub-tag">${html(p.topic || 'Research')}</span>${isNew?'<span class="new-chip">RECENT</span>':''}</div><div class="publication-citation">${[dateDisplay,p.volume?`Vol. ${p.volume}`:'',p.issue?`No. ${p.issue}`:'',p.pages?`pp. ${p.pages}`:'',p.publicationType||'',p.publisher||''].filter(Boolean).map(html).join(' · ')}</div></div><div class="publication-actions"><a href="${safeHref(link)}" target="_blank" rel="noopener noreferrer" aria-label="Open ${html(p.title)}">${linkLabel} ↗</a></div></article>`;
       }).join('') : `<div class="empty-results">No matching papers. Try a different search term or year.</div>`;
     }
     search?.addEventListener('input',render);
